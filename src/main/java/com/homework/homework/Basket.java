@@ -10,8 +10,7 @@ import java.util.Set;
 @Component
 @SessionScope
 public class Basket {
-    final Set<Integer> item = new HashSet<>();
-
+    private final Set<Integer> item = new HashSet<>();
 
     public Set getItem() {
         return this.item;

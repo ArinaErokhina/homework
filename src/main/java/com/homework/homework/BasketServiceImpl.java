@@ -1,16 +1,20 @@
 package com.homework.homework;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.context.annotation.SessionScope;
 
 import java.util.List;
 import java.util.Set;
 
 @Service
-@SessionScope
 public class BasketServiceImpl implements BasketService {
 
-    private Basket basket = new Basket();
+    @Autowired
+    private final Basket basket;
+
+    public BasketServiceImpl(Basket basket) {
+        this.basket = basket;
+    }
 
     public String addBasket(List<Integer> ids) {
         basket.setItem(ids);

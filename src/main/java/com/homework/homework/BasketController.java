@@ -16,7 +16,11 @@ import java.util.Set;
 public class BasketController {
 
     @Autowired
-    BasketService basketService;
+    private final BasketService basketService;
+
+    public BasketController(BasketService basketService) {
+        this.basketService = basketService;
+    }
 
 
     @GetMapping(path = "/add")
