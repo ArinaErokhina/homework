@@ -1,11 +1,16 @@
 package com.homework.homework;
 
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.SessionScope;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+@Component
+@SessionScope
 public class Basket {
-    private Set<Integer> item = new HashSet<>();
+    final Set<Integer> item = new HashSet<>();
 
 
     public Set getItem() {
